@@ -1,0 +1,20 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/adduser.html.twig #}
+{% extends 'UserDataBundle::layout.html.twig' %}
+
+{% block title %}Add User{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Add a new user to DataBase </h1>
+    </header>
+
+
+
+    <form action="{{ path('userdata_adduser') }}" method="post" {{ form_enctype(form) }} class="usertype">
+        {{ form_errors(form) }}
+        {{ form_row(form.username) }}
+		{{ form_row(form.RegistrationDate) }}     
+        {{ form_rest(form) }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

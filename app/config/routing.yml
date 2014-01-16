@@ -1,0 +1,8 @@
+userdata:
+    resource: "@UserDataBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# blogger_blog:
+# resource: "@BloggerBlogBundle/Resources/config/routing.yml"
+#  prefix:   /
+

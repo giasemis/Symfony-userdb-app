@@ -1,0 +1,16 @@
+userdata_homepage:
+    pattern: /
+    defaults: { _controller: UserDataBundle:Page:index }
+    requirements:
+        _method:  GET
+userdata_showuser:
+    pattern:  /showuser/{id}
+    defaults: { _controller: UserDataBundle:User:showuser }
+    requirements:
+        _method:  GET
+        id: \d+
+userdata_adduser:
+    pattern:  /adduser
+    defaults: { _controller: UserDataBundle:Page:adduser }
+    requirements:
+     _method: GET|POST

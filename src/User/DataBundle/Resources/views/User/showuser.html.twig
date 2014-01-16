@@ -1,0 +1,13 @@
+{# src/Blogger/BlogBundle/Resources/views/User/showuser.html.twig #}
+{%extends 'UserDataBundle::layout.html.twig' %}
+
+{% block title %}user.showuser{% endblock%}
+
+{% block body %}
+    <article class="user">
+        <header>         <h2>{{ user.username| json_encode }}</h2>  </header>
+      User named {{user.username| json_encode }} was registered at {{user.RegistrationDate| json_encode| raw }} and his ID is :  {{ user.id | json_encode }} 
+			
+
+   </article>
+{% endblock %}

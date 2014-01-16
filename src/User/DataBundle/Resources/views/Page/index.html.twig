@@ -1,0 +1,39 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/index.html.twig #}
+{% extends 'UserDataBundle::layout.html.twig' %}
+
+{% block body %}
+ In this application <br>
+ You can add new users to database <a href="{{ path('userdata_adduser') }}">Add User</a><br>
+or <br>
+you can view already registered users
+
+
+<h3> Show registered users </h3>
+
+
+           
+            
+               <table>
+            <tr>
+               <td>ID</td><td>User Name</td>  <td>Registration Date</td>  <td>JSON represantion</td>  
+           </tr>
+		   
+{% for user in users %}
+        <article class="user">		   
+		   <tr>
+		   <td>{{user.id| json_encode}}</td><td>{{ user.username| json_encode }}</td>  <td>{{ user.RegistrationDate| json_encode}}</td>  <td><p class="continue"><a href="{{ path('userdata_showuser', { 'id': user.id }) }}">give me user's json represantion</a></p></td>  
+              
+            
+            
+			</tr>
+			
+
+            
+    {% else %}
+        <tr><td colspan=4>There are no users registers <a href="{{ path('userdata_adduser') }}">Add a User to see</a><br></td></tr>
+    {% endfor %}
+	
+	</table>
+
+ 
+{% endblock %}
